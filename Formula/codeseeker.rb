@@ -1,8 +1,8 @@
 class Codeseeker < Formula
   desc "Graph-powered code intelligence for Claude Code and AI assistants"
   homepage "https://github.com/jghiringhelli/codeseeker"
-  url "https://registry.npmjs.org/codeseeker/-/codeseeker-1.7.1.tgz"
-  sha256 "6b313544cb01109e6115de2fecddd7f311eb69f4b4bf93b56459ec0849e8f529"
+  url "https://registry.npmjs.org/codeseeker/-/codeseeker-1.7.2.tgz"
+  sha256 "cd1dbb5124d495bcdc98c365e6200c0aae49014f60afefec3b0239d18631d9c4"
   license "MIT"
 
   depends_on "node@18"
