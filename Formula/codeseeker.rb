@@ -1,34 +1,17 @@
 class Codeseeker < Formula
-  desc "Graph-powered code intelligence for Claude Code and AI assistants"
+  desc "Graph-powered code intelligence for Claude Code"
   homepage "https://github.com/jghiringhelli/codeseeker"
-  url "https://registry.npmjs.org/codeseeker/-/codeseeker-1.7.2.tgz"
-  sha256 "cd1dbb5124d495bcdc98c365e6200c0aae49014f60afefec3b0239d18631d9c4"
+  url "https://registry.npmjs.org/codeseeker/-/codeseeker-refs/heads/master.tgz"
+  sha256 "67abc7a1805ce1c843eecfa4105a652a3d9df0e2ece4e1f64b9ea39ded77d2ff"
   license "MIT"
-
   depends_on "node@18"
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    system "npm", "install", *std_npm_args
+    bin.install_symlink Dir["\#{libexec}/bin/*"]
   end
 
   test do
-    system "#{bin}/codeseeker", "--version"
-  end
-
-  def caveats
-    <<~EOS
-      CodeSeeker is now installed!
-
-      Quick start:
-        1. cd your-project
-        2. codeseeker install --vscode    # or --cursor, --windsurf
-        3. Restart your IDE
-
-      Verify installation:
-        Ask your AI assistant: "What CodeSeeker tools do you have?"
-
-      Documentation: https://github.com/jghiringhelli/codeseeker#readme
-    EOS
+    system "\#{bin}/codeseeker", "--version"
   end
 end
